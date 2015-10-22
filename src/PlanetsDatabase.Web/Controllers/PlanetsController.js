@@ -20,24 +20,20 @@
     //    // err.status will contain the status code
     //});
 
-
     //$scope.submitRules = function() {
     var responsePromise = $http(
     {
         method: 'GET',
-        url: 'http://localhost:59783/api/planets',
+        url: 'http://localhost:58358/api/planets',
         headers: { 'X-Parse-Application-Id': 'XXX', 'X-Parse-REST-API-Key': 'YYY' }
     });
 
     //var responsePromise = $http.get("http://localhost:58358/api/planets");
     responsePromise.success(function (data, status, headers, config) {
         $scope.planets = data;
-        $scope.planets.activePanel = 1;
     });
     responsePromise.error(function (data, status, headers, config) {
         alert("AJAX failed!");
     });
-
-    
-
+    //}
 });
