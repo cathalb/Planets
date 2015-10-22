@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.3.0/css/font-awesome.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/styles/libs.min.css">
+    <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/styles/docs.min.css">
+    
+    <script src="//cdn.jsdelivr.net/angularjs/1.4.5/angular.min.js" data-semver="1.4.5"></script>
+    <script src="//cdn.jsdelivr.net/angularjs/1.4.5/angular-animate.min.js" data-semver="1.4.5"></script>
+    <script src="//cdn.jsdelivr.net/angularjs/1.4.5/angular-sanitize.min.js" data-semver="1.4.5"></script>
+    <script src="//mgcrea.github.io/angular-strap/dist/angular-strap.js" data-semver="v2.3.2"></script>
+    <script src="//mgcrea.github.io/angular-strap/dist/angular-strap.tpl.js" data-semver="v2.3.2"></script>
+    <script src="//mgcrea.github.io/angular-strap/docs/angular-strap.docs.tpl.js" data-semver="v2.3.2"></script>
+
+    <title>PlanetDatabase.com</title>
+</head>
+<body ng-app="PlanetDatabaseApp">
+
+    <div class="container">
+        <div class="page-header">
+            <h1>PlanetDatabase.com</h1>
+        </div>
+
+        <div class="row">
+            <div ng-controller="PlanetController">
+                <div class="col-sm-6">
+                    <p>Welcome to PlanetDatase.com</p>
+                    <br />
+                    <p>Please see the list of planets in our solar system on the right hand side.</p>
+                </div>
+                <div align="center" class="col-sm-6">
+                    
+                    <div class="panel-group" ng-model="planets.activePanel" role="tablist" aria-multiselectable="true" bs-collapse>
+                        <div class="panel" ng-repeat="panel in planets">
+                            <div class="panel-heading" role="tab">
+                                <h4 class="panel-title">
+                                    <a bs-collapse-toggle>
+                                        {{ panel.Name }}
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="panel-collapse" role="tabpanel" bs-collapse-target>
+                                <div class="panel-body">
+                                    {{ panel.DistanceFromSun }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modules -->
+    <script src="Scripts/app/app.js"></script>
+    <!-- Controllers -->
+    <script src="Scripts/app/Controller/PlanetsController.js"></script>
+</body>
+</html>
